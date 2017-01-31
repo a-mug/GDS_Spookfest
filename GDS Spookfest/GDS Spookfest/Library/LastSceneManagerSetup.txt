@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/GDS Spookfest.unity
+  isLoaded: 1
+  isActive: 1
