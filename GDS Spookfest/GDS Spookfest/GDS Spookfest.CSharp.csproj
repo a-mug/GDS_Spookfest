@@ -69,7 +69,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Lights_Corridor.cs" />
     <Compile Include="Assets\Scripts\Player_Controls.cs" />
+    <Compile Include="Assets\Scripts\Puzzle1.cs" />
+    <Compile Include="Assets\Scripts\Puzzle1Button.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

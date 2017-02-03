@@ -45,7 +45,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Lights_Corridor.cs" />
      <Compile Include="Assets\Scripts\Player_Controls.cs" />
+     <Compile Include="Assets\Scripts\Puzzle.cs" />
+     <Compile Include="Assets\Scripts\Puzzle1Button.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

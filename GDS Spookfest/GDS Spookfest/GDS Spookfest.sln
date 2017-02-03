@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDS Spookfest.CSharp", "GDS Spookfest.CSharp.csproj", "{F8EFE777-AC48-7409-7234-9ACAB5D3D6C6}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{538DAF39-80F0-E18C-EDFA-4E0CA1923809}") = "GDS Spookfest", "Assembly-CSharp.csproj", "{7CC9B617-2A8D-33A7-33B8-BE23323C1749}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F8EFE777-AC48-7409-7234-9ACAB5D3D6C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8EFE777-AC48-7409-7234-9ACAB5D3D6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8EFE777-AC48-7409-7234-9ACAB5D3D6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8EFE777-AC48-7409-7234-9ACAB5D3D6C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CC9B617-2A8D-33A7-33B8-BE23323C1749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CC9B617-2A8D-33A7-33B8-BE23323C1749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CC9B617-2A8D-33A7-33B8-BE23323C1749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CC9B617-2A8D-33A7-33B8-BE23323C1749}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

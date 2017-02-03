@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Player_Controls : MonoBehaviour
@@ -37,7 +38,8 @@ public class Player_Controls : MonoBehaviour
 	// If the cursor is locked
 	public bool cursorLocked = false;
 
-	//public Text onScreenText;
+	public Text onScreenText;
+	public float raycast_distance;
 
 	CharacterController characterController;
 
@@ -190,18 +192,26 @@ public class Player_Controls : MonoBehaviour
 		{
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(new Vector3((Screen.width / 2), (Screen.height / 2)));
-			if (Physics.Raycast(ray.origin, ray.direction, out hit, 10f))
+			if (Physics.Raycast(ray.origin, ray.direction, out hit, raycast_distance))
 			{
 				if (hit.collider.gameObject.tag == "PickUp")
 				{
-					//onScreenText.text = "Press LMB to pick up";
+					onScreenText.text = "Press LMB to pick up";
 					if (Input.GetMouseButtonDown(0))
 					{
 						hit.collider.gameObject.SetActive(false);
 						//PickUpBattery();
 					}
 				}
-
+				else if (hit.collider.gameObject.tag == "Puzzle1Button")
+				{
+					onScreenText.text = "Press LMB to interact";
+					if (Input.GetMouseButtonDown(0))
+					{
+						hit.collider.gameObject.SendMessage("toggle");
+						//PickUpBattery();
+					}
+				}
 				else if (hit.collider.gameObject.tag == "Note")
 				{
 					//onScreenText.text = "Press LMB to interact";
@@ -216,13 +226,13 @@ public class Player_Controls : MonoBehaviour
 				}
 				else
 				{
-					//onScreenText.text = "";
+					onScreenText.text = "";
 				}
 
 			}
 			else
 			{
-				//onScreenText.text = "";
+				onScreenText.text = "";
 			}
 
 
