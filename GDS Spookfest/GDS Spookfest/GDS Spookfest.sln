@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{538DAF39-80F0-E18C-EDFA-4E0CA1923809}") = "GDS Spookfest", "Assembly-CSharp.csproj", "{7CC9B617-2A8D-33A7-33B8-BE23323C1749}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDS Spookfest", "Assembly-CSharp.csproj", "{7CC9B617-2A8D-33A7-33B8-BE23323C1749}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

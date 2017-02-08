@@ -14,6 +14,21 @@ public class Player_Controls : MonoBehaviour
 	// How much the Player can look up and down
 	public float upDownRange = 60.0f;
 
+	public string sprint_button;
+	public string crouch_button;
+
+	public Slider sprint_slider;
+	float sprint_speed;
+	public float sprint_speed_max;
+	public float sprint_reduction;
+	public float sprint_max;
+	float current_sprint;
+	bool can_sprint;
+
+	bool sliding;
+	Vector3 slide_height;
+	Vector3 reset_height;
+
 	//public float jumpSpeed = 5f;
 
 	////Variables for the torch
@@ -47,6 +62,13 @@ public class Player_Controls : MonoBehaviour
 	void Start()
 	{
 		//playerDead = true;
+		current_sprint = sprint_max;
+		sprint_slider.maxValue = sprint_max;
+		can_sprint = true;
+
+		sliding = false;
+		slide_height = new Vector3(this.transform.localScale.x, (this.transform.localScale.y / 2) , this.transform.localScale.z);
+		reset_height = new Vector3(this.transform.localScale.x, this.transform.localScale.y , this.transform.localScale.z);
 
 		//Locks the cursor in place and makes it hidden
 		Cursor.lockState = CursorLockMode.Locked;
@@ -57,6 +79,11 @@ public class Player_Controls : MonoBehaviour
 		characterController = GetComponent<CharacterController>();
 		//playerLight.enabled = false;
 		//InvokeRepeating("UpdateLight", 0, 0.01f);
+	}
+
+	void toggleSprintBool()
+	{
+		can_sprint = true;
 	}
 
 	//void PickUpBattery()
@@ -183,6 +210,22 @@ public class Player_Controls : MonoBehaviour
 	//    playerDead = false;
 	//}
 
+	void Slide(bool slide)
+	{
+		if (slide == true) 
+		{
+			sliding = true;
+			this.transform.localScale = slide_height;
+			//this.transform.Translate (0, -move_amount, 0);
+		}
+		else
+		{
+			sliding = false;
+			//this.transform.Translate (0, move_amount, 0);
+			this.transform.localScale = reset_height;
+		}
+	}
+
 
 	// Update is called once per frame
 	void Update()
@@ -248,8 +291,8 @@ public class Player_Controls : MonoBehaviour
 			//playerLight.transform.localRotation = Quaternion.Euler (verticalRotation, 0, 0);
 
 			//Movement
-			forwardSpeed = Input.GetAxis("Vertical") * movementSpeed;
-			sideSpeed = Input.GetAxis("Horizontal") * movementSpeed;
+			forwardSpeed = Input.GetAxis("Vertical") * movementSpeed * sprint_speed;
+			sideSpeed = (Input.GetAxis("Horizontal") * movementSpeed);
 
 			if (characterController.isGrounded)
 			{
@@ -276,6 +319,47 @@ public class Player_Controls : MonoBehaviour
 			//    ToggleLight();
 			//}
 		}
+
+		if (Input.GetButton (crouch_button) && sprint_speed == 1.0f) 
+		{
+			Slide (true);
+		} 
+		else 
+		{
+			Slide (false);
+		}
+
+		if (Input.GetButton (sprint_button) && can_sprint == true) 
+		{
+			sprint_speed = sprint_speed_max;
+			current_sprint -= sprint_reduction;// * Time.deltaTime;
+			if (current_sprint < 0.0f) 
+			{
+				current_sprint = 0.0f;
+				can_sprint = false;
+			}
+		} 
+		else// if(Input.GetButtonUp(sprint_button))
+		{
+			sprint_speed = 1.0f;
+			current_sprint += sprint_reduction;// * Time.deltaTime;
+
+			if (current_sprint > sprint_max / 5) 
+			{
+				can_sprint = true;
+			}
+
+			if (current_sprint > sprint_max) 
+			{
+				current_sprint = sprint_max;
+			}
+			//Invoke("toggleSprintBool", 1.0f);
+
+		}
+
+		sprint_slider.value = current_sprint;
+
+		Debug.Log (1.0f/Time.deltaTime);
 
 		//if (Input.GetKeyDown(KeyCode.Escape) & inOtherMenu == false & playerDead == false)
 		//{

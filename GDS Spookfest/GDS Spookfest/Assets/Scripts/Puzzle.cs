@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-//u suck andrew
 
 public class Puzzle : MonoBehaviour 
 {
@@ -28,19 +27,19 @@ public class Puzzle : MonoBehaviour
 		start_z = this.transform.position.z;
 
 		correct_array = new int[4,4]
-		{
-			{1, 0, 0, 0},
-			{0, 0, 0, 0},
-			{0, 0, 0, 0},
-			{0, 0, 0, 0}
-		};
-
 //		{
-//			{0, 1, 0, 1},
-//			{0, 1, 0, 0},
-//			{1, 0, 1, 0},
-//			{0, 1, 1, 1}
+//			{1, 0, 0, 0},
+//			{0, 0, 0, 0},
+//			{0, 0, 0, 0},
+//			{0, 0, 0, 0}
 //		};
+
+		{
+			{0, 1, 0, 1},
+			{0, 1, 0, 0},
+			{1, 0, 1, 0},
+			{0, 1, 1, 1}
+		};
 
 		input_array = new int[4, 4];
 
@@ -83,7 +82,7 @@ public class Puzzle : MonoBehaviour
 			}
 		}
 
-		Debug.Log ("Puzzle1 Complete");
+		//Debug.Log ("Puzzle1 Complete");
 		return true;
 	}
 
@@ -92,7 +91,6 @@ public class Puzzle : MonoBehaviour
 	{
 		if (correct == true && door_counter < door_move_dist) 
 		{
-
 			this.transform.localPosition = new Vector3 (start_x, start_y,  start_z + door_counter);
 			door_counter += door_speed;
 		}

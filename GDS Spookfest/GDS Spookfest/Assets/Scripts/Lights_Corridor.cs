@@ -30,7 +30,8 @@ public class Lights_Corridor : MonoBehaviour
 
 	void actualTurnOff()
 	{
-		lightArray [i].enabled = false;
+		//lightArray [i].enabled = false;
+		Destroy(lightArray [i]);
 		i++;
 	}
 

@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Puzzle.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player_Controls.cs">
     <Files>
-      <File FileName="Assets\Scripts\Puzzle.cs" Line="4" Column="1" />
-      <File FileName="Assets\Scripts\Lights_Corridor.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player_Controls.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Puzzle.cs" Line="95" Column="31" />
+      <File FileName="Assets\Scripts\Lights_Corridor.cs" Line="35" Column="7" />
+      <File FileName="Assets\Scripts\Player_Controls.cs" Line="329" Column="18" />
       <File FileName="Assets\Scripts\Puzzle1Button.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
